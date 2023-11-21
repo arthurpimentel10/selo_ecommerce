@@ -1,0 +1,11 @@
+<br><br>
+<form action="/login" method="post">
+<label for="email">Digite seu e-mail</label>
+<input type="text" name="email">
+<label for="senha">Digite sua senha</label>
+<input type="password" name="senha">
+<button type="submit">Enviar dados</button>
+</form>
+{{#if msg}}
+<p>{{msg}}</p>
+{{/if}}

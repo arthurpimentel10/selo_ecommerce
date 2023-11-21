@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>SELO</title>
+</head>
+<body>
+    
+    {{#if log}}
+        <header class="cabecalho">
+            <img src="/img/logo branca.png" alt="ícone da selo">
+            <nav>
+                
+
+                          
+                <a href="/">Principal</a>
+                <a href="/historia">História</a>
+                <a href="/Contato">Contato</a>
+                <a href="/logout">Sair</a>
+                <a>Usuário: {{usuario}}</a>
+            </nav>
+            <a href="/carrinho"><img src="/img/carrinho_vazio.png" alt="carrinho-ícon"></a>
+              </header>
+        <hr>
+    {{else}}
+        <header class="cabecalho">
+            <img src="/img/logo branca.png" alt="ícone da selo">
+            <nav>
+                
+
+                          
+                <a href="/">Home</a>
+                <a href="/historia">História</a>
+                <a href="/Contato">Contato</a>
+                <a href="/login">Login</a>
+                {{!-- <a>Usuário: {{usuario}}</a> --}}
+            </nav>
+            <a href="/carrinho"><img src="/img/carrinho_vazio.png" alt="carrinho-ícon"></a>
+              </header>
+        <hr>
+        {{/if}}
+        {{{body}}}
+    <footer>
+        <div class="rodape">
+            <p>@selocompany</p>
+            <p>(47)99717-6515</p> 
+        </div>
+        <div class="rodape">
+            <p>selo de qualidade!</p>
+            <p><selocompany class="com br"></selocompany>selocompany.com.br</p>
+
+        </div>
+        <p class="marca">SELO Company &copy;</p>
+    </footer>
+     
+    
+</body>
+</html>

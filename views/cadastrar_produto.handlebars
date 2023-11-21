@@ -1,0 +1,25 @@
+<br>
+<nav>
+    <a href="/cadastrar_produto">Cadastrar Produto</a>&emsp;
+    <a href="/listar_produto">Listar Produto</a>&emsp;
+    <a href="/editar_produto">Editar Produto</a>&emsp;
+    <a href="/excluir_produto">Excluir Produto</a>
+</nav>
+<br><br>
+<form action="/cadastrar_produto" method="post">
+    <label for="nome">Nome do Produto:</label><br>
+    <input type="text" name="nome" placeholder="Nome"><br>
+    <label for="tamanho">Tamanho do Produto:</label><br>
+    <input type="text" name="tamanho" placeholder="G"><br>
+    <label for="quantidadeEstoque">Quantidade do Produto:</label><br>
+    <input type="text" name="quantidadeEstoque" placeholder="quantidade"><br>
+    <label for="precoUnitario">Preço unitário do Produto:</label><br>
+    <input type="text" name="precoUnitario" placeholder="unitário"><br>
+    <label for="descricao">Descrição do Produto:</label><br>
+    <input type="text" name="descricao" placeholder="Descrição"><br>
+    <br><br>
+    <button type="submit">Enviar</button>
+</form>
+{{#if msg}}
+    <p>{{msg}}</p>
+{{/if}} 
