@@ -102,6 +102,10 @@ app.post('/login',async(req,res)=>{
     }
 })
 
+app.get('/gerenciador',(req,res)=>{
+    res.render('gerenciador',{log,usuario})
+})
+
 app.get('/login',(req,res)=>{
     res.render('login',{log})
 })
@@ -113,9 +117,8 @@ app.get('/logout',(req,res)=>{
 })
 
 app.get('/',(req,res)=>{
-    log = false,
-    usuario = ''
-    res.render('home',{log})
+    // log = false
+    res.render('home',{log,usuario})
 })
 
 // ------------------------------------
