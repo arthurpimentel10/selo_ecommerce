@@ -1,0 +1,49 @@
+/* listar_produto.css */
+
+body {
+    text-align: center; /* Centralizar o conteúdo na página */
+}
+
+nav {
+    background-color: #000000; /* Cor de fundo da barra de navegação */
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white; /* Cor do texto dos links */
+    text-decoration: none; /* Remover sublinhado dos links */
+    margin: 0 15px; /* Espaçamento entre os links */
+}
+
+nav a:hover {
+    text-decoration: underline; /* Adicionar sublinhado ao passar o mouse sobre os links */
+}
+
+h1 {
+    color: #333; /* Cor do título */
+}
+
+table {
+    width: 80%; /* Largura da tabela */
+    margin: 20px auto; /* Centralizar a tabela na página */
+    border-collapse: collapse; /* Colapso das bordas da tabela */
+}
+
+thead th, tbody td {
+    border: 1px solid #ddd; /* Borda das células da tabela */
+    padding: 8px; /* Espaçamento interno das células */
+}
+
+thead th {
+    background-color: #000000; /* Cor de fundo do cabeçalho da tabela */
+    color: white; /* Cor do texto do cabeçalho da tabela */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Cor de fundo para linhas pares */
+}
+
+tbody tr:hover {
+    background-color: #ddd; /* Cor de fundo ao passar o mouse sobre as linhas */
+}

@@ -21,7 +21,34 @@ app.use(express.static('public'))
 app.engine('handlebars', exphbs.engine())
 app.set('view engine', 'handlebars')
 // -------------------------------------------------
+app.post('/comprar', async (req,res)=>{
+    const dados_carrinho = req.body
+    console.log(dados_carrinho)
 
+    const atualiza_promise = []
+
+    for (const item of dados_carrinho){
+        const produto = await Produto.findByPk(item.cod_prod, {raw: true})
+        console.log(produto)
+        if(!produto || produto.quantidadeEstoque < item.qtde){
+           return  res.status(400).json({message: "produto insuficiente ou não disponível" + produto.quantidadeEstoque})
+        }
+
+        const atualiza_promessas = await Produto.update(
+            { quantidadeEstoque: produto.quantidadeEstoque - item.qtde},
+            {where: { id: item.cod_prod}}
+        )
+        atualiza_promise.push(atualiza_promessas)
+    }
+
+    try{
+        await Promise.all(atualiza_promise)
+        res.status(200).json({message: "compra realizada com sucesso!"})
+    }catch(error){
+        console.error("Erro ao atualizar os dados"+error)
+        res.status(500).json({message: "Erro ao processar a compra"})
+    }
+})
 
 
 app.get('/carrinho', (req,res)=>{

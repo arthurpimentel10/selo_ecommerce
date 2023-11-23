@@ -5,7 +5,7 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #000000;
     color: white;
     padding: 10px;
     text-align: center;
@@ -37,7 +37,7 @@ form {
 
 label {
     margin-top: 10px;
-    color: #333;
+    color: #000000;
 }
 
 input,

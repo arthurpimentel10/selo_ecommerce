@@ -5,7 +5,7 @@ body {
 }
 
 .cabecalho {
-    background-color: #333;
+    background-color: #000000;
     color: white;
     display: flex;
     align-items: center;
@@ -14,7 +14,7 @@ body {
 }
 
 .cabecalho img {
-    height: 50px; /* Ajuste a altura conforme necessário */
+    height: 65px; /* Ajuste a altura conforme necessário */
 }
 
 nav {
@@ -36,7 +36,7 @@ nav a:hover {
 }
 
 footer {
-    background-color: #333;
+    background-color: #000000;
     color: white;
     padding: 20px;
     text-align: center;
