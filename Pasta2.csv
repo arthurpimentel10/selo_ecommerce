@@ -1,0 +1,6 @@
+id ;nome;email;senha;tipo
+1;arthur;arthur@gmail.com;123;Gerente
+2;miguel;miguel@gmail.com;123;Cliente
+3;carlos;carlos@gmail.com;123;Gerente
+4;lucas;lucas@gmail.com;123;Cliente
+5;victoria;victoria@gmail.com;123;Gerente
