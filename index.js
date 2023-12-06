@@ -21,6 +21,8 @@ app.use(express.static('public'))
 app.engine('handlebars', exphbs.engine())
 app.set('view engine', 'handlebars')
 // -------------------------------------------------
+
+
 app.post('/comprar', async (req,res)=>{
     const dados_carrinho = req.body
     console.log(dados_carrinho)
@@ -55,6 +57,26 @@ app.get('/carrinho', (req,res)=>{
     res.render('carrinho', {log, usuario, tipoUsuario})
 })
 // ------------------SIM--------------------
+app.post('/excluir_produto',async(req,res)=>{
+    const nome = req.body.nome
+    const tamanho = req.body.tamanho
+    const precoUnitario = req.body.precoUnitario
+    const pesq = await Produto.findOne({raw:true})
+    let msg1 = 'Dados Excluídos'
+    let msg2 = 'Dados não encontrados'
+    if (pesq ==null){
+        res.render('excluir_produto',{log,msg2,usuario})
+    }else{
+        await Produto.destroy ({where:{nome:pesq.nome,tamanho:pesq.tamanho,precoUnitario:pesq.precoUnitario}})
+        res.render('excluir_produto',{log,usuario,msg1})
+    }
+})
+
+app.get('/excluir_produto',(req,res)=>{
+    res.render('excluir_produto',{log,usuario})
+})
+
+
 app.post('/editar_produto', async (req,res)=>{
     const nome = req.body.nome
     const tamanho = (req.body.tamanho)
@@ -112,7 +134,7 @@ app.post('/login',async(req,res)=>{
     const pesq = await Usuario.findOne({raw:true, where:{email:email, senha:senha}})
     let msg = 'Usuário não encontrado'
     if(pesq == null){
-        res.render('home',{log,msg})
+        res.render('login',{log,msg})
     }else if(pesq.tipo === 'Gerente') {
         log = true,
         usuario = pesq.nome
